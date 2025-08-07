@@ -1,0 +1,44 @@
+
+
+.banner-bar {
+    margin-top: 20px;
+    width: 297mm;
+    margin: 0 auto;
+    margin-top: 20px;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: #724E9E; 
+    padding: 8px 16px;
+    border-radius: 4px;
+    background: linear-gradient(
+      90deg,
+      rgba(114, 78, 158, 0.25) 80%,   /* dark shade left */
+      rgba(114, 78, 158, 0.25) 22%,
+      rgba(114, 78, 158, 0.15) 22%,  /* light shade right */
+      rgba(114, 78, 158, 0.15) 100%
+    );
+  }
+  
+  
+  .genes-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+    margin-bottom: 30px;
+  }
+  
+  .genes-box {
+    font-family: 'Poppins', Arial, sans-serif;
+    width: 10%;
+    background: #E8E0FF;
+    border-radius: 24px;
+    padding: 10px 48px;
+    font-weight: bold;
+    color: #724E9E;
+    font-size: 22px;
+    letter-spacing: 1px;
+    box-shadow: 0 1px 3px #0001;
+    text-align: center;
+  }
+  
