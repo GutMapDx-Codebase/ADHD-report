@@ -1,5 +1,5 @@
 import React from 'react';
-import './Banner.css';
+import './css/Banner.css';
 
 function Banner({ title = "DNA Panel", genesLabel = "Genes" }) {
   return (

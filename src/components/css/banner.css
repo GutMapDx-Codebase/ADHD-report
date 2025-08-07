@@ -5,7 +5,7 @@
     width: 297mm;
     margin: 0 auto;
     margin-top: 20px;
-   
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 32px;
     color: #724E9E; 
@@ -26,10 +26,10 @@
     justify-content: center;
     margin-top: 35px;
     margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
   }
   
   .genes-box {
-   
     width: 10%;
     background: #E8E0FF;
     border-radius: 24px;
@@ -40,5 +40,6 @@
     letter-spacing: 1px;
     box-shadow: 0 1px 3px #0001;
     text-align: center;
+    font-family: 'Poppins', sans-serif;
   }
   

@@ -1,0 +1,28 @@
+*{
+  font-family: "'Poppins', Arial, sans-serif";
+}
+.box {
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  background: #fafafa;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px 0 #eaeaea;
+  width: 180px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #eaeaea;
+  font-family: 'Poppins', sans-serif;
+}
+
+.box-title {
+  font-weight: 700;
+  font-size: 22px;
+  color: #111;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+  font-family: 'Poppins', sans-serif;
+}

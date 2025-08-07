@@ -1,5 +1,5 @@
 import React from 'react'
-import './footer.css'
+import './css/Footer.css'
 
 function Footer({ sampleId = "1234550", page = 3, totalPages = 12 }) {
   return (

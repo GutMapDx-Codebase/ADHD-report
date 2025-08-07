@@ -1,0 +1,97 @@
+.card-container {
+  max-width: 297mm;
+  margin: 0 auto;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+.card-item {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 18px;
+  overflow: hidden;
+  border: 1.5px solid #eee;
+  font-family: 'Poppins', sans-serif;
+}
+
+.card-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.card-table th {
+  padding: 12px 8px;
+  font-weight: bold;
+  color: #724E9E;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-align: center;
+  border: none;
+  font-family: 'Poppins', Arial, sans-serif;
+  position: relative;
+  background: #E8E0FF;
+}
+
+.card-table th:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background: #724E9E;
+  opacity: 0.3;
+}
+
+.card-table td {
+  text-align: center;
+  padding: 12px 8px;
+  font-size: 15px;
+  font-family: 'Poppins', Arial, sans-serif;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+
+.card-table td:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background: #724E9E;
+  opacity: 0.2;
+}
+
+.card-table td:first-child {
+  font-weight: bold;
+  color: #222;
+}
+
+.card-table td:nth-child(2),
+.card-table td:nth-child(3) {
+  color: #444;
+}
+
+.card-table td:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-description {
+  font-family: 'Poppins';
+
+  background: #fff;
+  color: #444;
+  font-size: 14px;
+  padding: 12px 18px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.card-description p {
+  margin: 0;
+}
