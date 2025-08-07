@@ -5,7 +5,7 @@
     width: 297mm;
     margin: 0 auto;
     margin-top: 20px;
-    font-family: 'Poppins', Arial, sans-serif;
+   
     font-weight: 700;
     font-size: 32px;
     color: #724E9E; 
@@ -29,7 +29,7 @@
   }
   
   .genes-box {
-    font-family: 'Poppins', Arial, sans-serif;
+   
     width: 10%;
     background: #E8E0FF;
     border-radius: 24px;

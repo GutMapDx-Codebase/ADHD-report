@@ -1,4 +1,5 @@
 import React from 'react';
+import Resultbar from './Resultbar';
 
 const cardData = [
   {
@@ -226,26 +227,13 @@ const Card = () => {
                 </td>
                 <td
                   style={{
-                    textAlign: "center",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                     padding: "12px 8px",
-                    fontSize: 15,
-                    fontFamily: "Poppins, Arial, sans-serif",
-                    borderBottom: "1px solid #eee"
                   }}
                 >
-                  <span
-                    style={{
-                      background: item.resultBg || "#EAA9B2",
-                      borderRadius: "16px",
-                      padding: "6px 28px",
-                      color: "#222",
-                      fontWeight: "bold",
-                      fontSize: "15px",
-                      display: "inline-block"
-                    }}
-                  >
-                    {item.result}
-                  </span>
+                  <Resultbar value={"TT"} color="red" />
                 </td>
               </tr>
             </tbody>

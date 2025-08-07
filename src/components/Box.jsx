@@ -1,4 +1,5 @@
 import React from "react";
+import Resultbar from "./Resultbar";
 
 const Box = ({ title = "MTHFR", value = "TT", boxColor = "#e9a6ad" }) => {
   return (
@@ -30,28 +31,7 @@ const Box = ({ title = "MTHFR", value = "TT", boxColor = "#e9a6ad" }) => {
       >
         {title}
       </div>
-      <div
-        style={{
-          background: boxColor,
-          borderRadius: 20,
-          width: 110,
-          height: 32,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <span
-          style={{
-            fontWeight: 600,
-            fontSize: 15,
-            color: "#222",
-            letterSpacing: 1,
-          }}
-        >
-          {value}
-        </span>
-      </div>
+      <Resultbar value={"TT"} color="red" />
     </div>
   );
 };

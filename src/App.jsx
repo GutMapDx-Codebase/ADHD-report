@@ -1,19 +1,18 @@
 import React from 'react';
-import Header from './components/Header';
-import Banner from './components/Banner';
-import Footer from './components/Footer';
-import Box from './components/Box';
-import Card from './components/Card';
-import SecondCard from './components/secondCard';
+import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Report from './report';
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Banner />
-      <Box />
-      <Card />
-      <SecondCard />
-      <Footer />
+      
+    
+
+      <Router>
+        <Routes>
+          <Route path="/" element={  <>  <Report />   </>   } />
+        </Routes>
+      </Router>
     </div>
   );
 }
