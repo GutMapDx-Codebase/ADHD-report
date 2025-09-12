@@ -1,24 +1,15 @@
 import React from 'react';
 import Resultbar from './Resultbar';
 import './css/Card.css';
+import SecondCard from './SecondCard';
 
-const cardData = [
-  {
-    gene: "HTR1A",
-    snps: "rs6295",
-    function: "Serotonin receptor",
-    result: "GG",
-    description:
-      "HTR1A influences serotonin signaling involved in mood, anxiety, and impulse control. Variants may reduce receptor sensitivity, contributing to emotional instability and attention issues in ADHD.",
-    resultBg: "#EAA9B2"
-  }
-];
 
-const Card = () => {
+
+const Card = ({ cardData }) => {
   return (
     <div className="card-container">
       {cardData.map((item, idx) => (
-        <div key={idx} className="card-item">
+        <><div key={idx} className="card-item">
           <table className="card-table">
             <thead>
               <tr>
@@ -43,8 +34,11 @@ const Card = () => {
             <p>{item.description}</p>
           </div>
         </div>
+ 
+          <SecondCard  header={"dsfsd"} description={"dsgv"} headerBg={"green"} headerColor={"#222"}/>
+        </>
       ))}
-    </div>
+    </div >
   );
 };
 

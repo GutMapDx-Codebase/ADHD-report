@@ -1,7 +1,8 @@
 .card-container {
-  max-width: 297mm;
+  /* max-width: 297mm; */
   margin: 0 auto;
-  font-family: 'Poppins', Arial, sans-serif;
+  /* margin-bottom: 500px; */
+
 }
 
 .card-item {
@@ -11,14 +12,14 @@
   margin-bottom: 18px;
   overflow: hidden;
   border: 1.5px solid #eee;
-  font-family: 'Poppins', sans-serif;
+
 }
 
 .card-table {
   width: 100%;
   border-collapse: collapse;
   background: #fff;
-  font-family: 'Poppins', sans-serif;
+
 }
 
 .card-table th {
@@ -29,9 +30,9 @@
   letter-spacing: 1px;
   text-align: center;
   border: none;
-  font-family: 'Poppins', Arial, sans-serif;
+  /* background-color: #724E9E; */
   position: relative;
-  background: #E8E0FF;
+  /* background: #E8E0FF; */
 }
 
 .card-table th:not(:last-child)::after {
@@ -49,7 +50,7 @@
   text-align: center;
   padding: 12px 8px;
   font-size: 15px;
-  font-family: 'Poppins', Arial, sans-serif;
+
   border-bottom: 1px solid #eee;
   position: relative;
 }
@@ -82,7 +83,20 @@
 }
 
 .card-description {
-  font-family: 'Poppins';
+
+
+  /* background: #fff; */
+  color: #444;
+  font-size: 14px;
+  padding: 12px 18px;
+  text-align: center;
+  line-height: 1.5;
+  height: 100mm;
+  background-color: #724E9E;
+}
+
+.card-descriptionn {
+
 
   background: #fff;
   color: #444;
@@ -90,6 +104,7 @@
   padding: 12px 18px;
   text-align: center;
   line-height: 1.5;
+  /* height: 44mm; */
 }
 
 .card-description p {

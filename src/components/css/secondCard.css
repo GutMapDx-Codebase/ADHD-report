@@ -1,7 +1,7 @@
 .second-card {
   max-width: 297mm;
   margin: 18px auto;
-  font-family: 'Poppins', Arial, sans-serif;
+  
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   background: #fff;
@@ -15,7 +15,7 @@
   text-align: center;
   padding: 10px 0 8px 0;
   letter-spacing: 0.5px;
-  font-family: 'Poppins', sans-serif;
+
 }
 
 .second-card-description {
@@ -24,5 +24,5 @@
   font-size: 15px;
   text-align: center;
   line-height: 1.6;
-  font-family: 'Poppins', sans-serif;
+
 }

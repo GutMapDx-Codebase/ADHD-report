@@ -2,14 +2,14 @@
 
 .banner-bar {
     margin-top: 20px;
-    width: 297mm;
+    width: 100%;
     margin: 0 auto;
     margin-top: 20px;
-    font-family: 'Poppins', sans-serif;
+  
     font-weight: 700;
     font-size: 32px;
     color: #724E9E; 
-    padding: 8px 16px;
+    padding: 0px 16px;
     border-radius: 4px;
     background: linear-gradient(
       90deg,
@@ -25,21 +25,22 @@
     display: flex;
     justify-content: center;
     margin-top: 35px;
+    /* width: 100%; */
     margin-bottom: 30px;
-    font-family: 'Poppins', sans-serif;
+   
   }
   
   .genes-box {
-    width: 10%;
+    width: fit-content;
     background: #E8E0FF;
     border-radius: 24px;
     padding: 10px 48px;
-    font-weight: bold;
+    font-weight: 600;
     color: #724E9E;
     font-size: 22px;
     letter-spacing: 1px;
     box-shadow: 0 1px 3px #0001;
     text-align: center;
-    font-family: 'Poppins', sans-serif;
+  
   }
   

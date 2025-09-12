@@ -1,7 +1,7 @@
 import React from 'react'
 
 function Resultbar(params) {
-const color = params.color === "red"? "#e9a6ad" : "#ccc";
+const color = params.color==="red"? "#EAA9B2" : params.color==="amber"? "#edeb9a" : "#A6EBC7";
 
 
     return (
@@ -18,8 +18,8 @@ const color = params.color === "red"? "#e9a6ad" : "#ccc";
         >
             <span
                 style={{
-                    fontWeight: 600,
-                    fontSize: 15,
+                    fontWeight: 500,
+                    fontSize: 16,
                     color: "#222",
                     letterSpacing: 1,
                 }}

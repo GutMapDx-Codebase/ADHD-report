@@ -10,7 +10,7 @@ function App() {
 
       <Router>
         <Routes>
-          <Route path="/" element={  <>  <Report />   </>   } />
+          <Route path="/:id" element={  <>  <Report />   </>   } />
         </Routes>
       </Router>
     </div>

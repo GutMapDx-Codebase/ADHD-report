@@ -2,13 +2,13 @@ import React from "react";
 import Resultbar from "./Resultbar";
 import "./css/Box.css";
 
-const Box = ({ title = "MTHFR", value = "TT", boxColor = "#e9a6ad" }) => {
+const Box = (params) => {
   return (
     <div className="box">
       <div className="box-title">
-        {title}
+        {params.title}
       </div>
-      <Resultbar value={"TT"} color="red" />
+      <Resultbar value={params.value} color={params.boxColor} />
     </div>
   );
 };
