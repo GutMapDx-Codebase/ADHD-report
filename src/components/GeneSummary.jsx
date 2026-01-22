@@ -5,10 +5,10 @@ import Title from './title';
 import Box from './Box';
 import Footer from './Footer';
 
-const GeneSummary = ({ genes, kit, lightenColorWithOpacity }) => {
+const GeneSummary = ({ genes, kit, lightenColorWithOpacity,title }) => {
     return (
         <div className='page'>
-            <Header logo={kit.style.imageBase64} color={kit.style.primaryColor} bg={lightenColorWithOpacity(kit.style.primaryColor, 0, 0.15)} />
+            <Header title={title} logo={kit.style.imageBase64} color={kit.style.primaryColor} bg={lightenColorWithOpacity(kit.style.primaryColor, 0, 0.15)} />
             <Banner color={kit.style.primaryColor} bg={lightenColorWithOpacity(kit.style.primaryColor, 0, 0.30)} bg2={lightenColorWithOpacity(kit.style.primaryColor, 0, 0.15)} text={"Genes Dashboard"} />
             <Title color={kit.style.primaryColor} bg={lightenColorWithOpacity(kit.style.primaryColor, 0, 0.15)} title={"Genes"} />
             <div className='cards-container'>

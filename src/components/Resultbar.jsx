@@ -18,8 +18,8 @@ const color = params.color==="red"? "#EAA9B2" : params.color==="amber"? "#edeb9a
         >
             <span
                 style={{
-                    fontWeight: 500,
-                    fontSize: 16,
+                    fontWeight: 600,
+                    fontSize: 14,
                     color: "#222",
                     letterSpacing: 1,
                 }}

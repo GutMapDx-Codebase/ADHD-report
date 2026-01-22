@@ -17,12 +17,13 @@ import { initialCardData } from './data';
 
 function Report() {
     const { id } = useParams();
-
     const [kit, setkit] = useState(null);
+    const [reportTitle, setReportTitle] = useState('Male');
     const [loading, setLoading] = useState(false);
-
+    const [updatedGene, setUpdatedGene] = useState(['MTHFR', 'VDR'])
+    const updatedInitialCardDate = initialCardData.filter((item) => updatedGene.includes(item.Gene))
     // Configurable state
-    const [genes, setGenes] = useState(initialCardData);
+    const [genes, setGenes] = useState(updatedInitialCardDate);
     const [itemsPerPage, setItemsPerPage] = useState(2);
 
     // Calculated values
@@ -147,6 +148,7 @@ function Report() {
                     }}
                     loading={loading}
                     progress={persontage}
+                    title={reportTitle}
                 />
 
                 {/* Page 2: Gene Summary */}
@@ -154,6 +156,7 @@ function Report() {
                     genes={genes}
                     kit={kit}
                     lightenColorWithOpacity={lightenColorWithOpacity}
+                    title={reportTitle}
                 />
 
                 {/* Remaining Pages: Gene Details */}
@@ -170,6 +173,7 @@ function Report() {
                             pageIndex={pageIdx + 3} // Starts from Page 3
                             totalPages={totalPages + 2} // Total pages + Cover + Summary
                             lightenColorWithOpacity={lightenColorWithOpacity}
+                            title={reportTitle}
                         />
                     );
                 })}

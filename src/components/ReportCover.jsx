@@ -1,14 +1,14 @@
 import React from 'react';
 import './css/page1.css'; // Assuming styles are here or inherited
 
-const ReportCover = ({ kit, onDownload, loading, progress }) => {
+const ReportCover = ({ kit, onDownload, loading, progress,title }) => {
     return (
         <div className="page">
             <div className='firstpage'>
                 <div
                 >  <img src={kit.style.imageBase64} alt='logo' className='logoforfirstpage' width={300} />
                     <h1 style={{ color: kit.style.secondaryColor }}>DNAMap</h1>
-                    <h2 style={{ backgroundColor: kit.style.primaryColor }}>ADHD</h2>
+                    <h2 style={{ backgroundColor: kit.style.primaryColor }}>{title}</h2>
                     <div className='firstpageinfo'>
                         <div>  <h4>Sample ID: </h4> <p>{kit.kitid} </p></div>
                         <div> <h4>Patient Name: </h4><p>{kit.patientName} </p></div>

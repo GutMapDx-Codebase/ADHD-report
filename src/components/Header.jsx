@@ -16,7 +16,7 @@ const Header = (params) => {
         style={{ color: params.color }}
       >
        
-        DNAMap - ADHD
+        DNAMap - {params.title}
       </div>
     </div>
   );

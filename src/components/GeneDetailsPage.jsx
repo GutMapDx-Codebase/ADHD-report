@@ -6,11 +6,11 @@ import SecondCard from './SecondCard';
 import Footer from './Footer';
 import './css/Card.css';
 
-const GeneDetailsPage = ({ pageData, kit, pageIndex, totalPages, lightenColorWithOpacity }) => {
+const GeneDetailsPage = ({ pageData, kit, pageIndex, totalPages, lightenColorWithOpacity,title }) => {
     return (
         <div className="page">
             <div>
-                <Header logo={kit.style.imageBase64} color={kit.style.primaryColor} bg={lightenColorWithOpacity(kit.style.primaryColor, 0, 0.15)} />
+                <Header title={title} logo={kit.style.imageBase64} color={kit.style.primaryColor} bg={lightenColorWithOpacity(kit.style.primaryColor, 0, 0.15)} />
                 <Banner color={kit.style.primaryColor} bg={lightenColorWithOpacity(kit.style.primaryColor, 0, 0.30)} bg2={lightenColorWithOpacity(kit.style.primaryColor, 0, 0.15)} text={"DNA Panel"} />
             </div>
             <div className='secondpage' >
