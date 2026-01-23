@@ -11,20 +11,37 @@ import "./components/css/page1.css";
 import ReportCover from "./components/ReportCover";
 import GeneSummary from "./components/GeneSummary";
 import GeneDetailsPage from "./components/GeneDetailsPage";
+import { maleFertilityGenesData } from './data';
+import { femaleFertilityGenesData } from './data';
 
 // Data
 import { initialCardData, hairGeneticsGenesData } from './data';
 
 function Report() {
-    const { id } = useParams();
-    const [kit, setkit] = useState(null);
-    const [reportTitle, setReportTitle] = useState('Male');
-    const [loading, setLoading] = useState(false);
-    const [updatedGene, setUpdatedGene] = useState(['MTHFR', 'VDR' , 'SOD2' , 'GC' , 'TMPRSS6' , 'DHCR7/NADSYN1' , 'PNPLA3' , 'FUT2' , 'COL1A1' , '20p11 region' , '20p11 region' , 'AR upstream' , 'SRD5A2' , 'PTGES2' , 'PTGFR' , 'PTGDR2' , 'CRABP2' , 'SLC45A2' , 'ADRB2'])
-    const updatedInitialCardDate = hairGeneticsGenesData.filter((item) => updatedGene.includes(item.Gene))
-    // Configurable state
-    const [genes, setGenes] = useState(updatedInitialCardDate);
-    const [itemsPerPage, setItemsPerPage] = useState(2);
+  const { id } = useParams();
+  const [kit, setkit] = useState(null);
+  const [reportTitle, setReportTitle] = useState('Male');
+  const [loading, setLoading] = useState(false);
+  const [updatedGene, setUpdatedGene] = useState(['MTHFR', 'VDR', 'SOD2', 'GC', 'TMPRSS6', 'DHCR7/NADSYN1', 'PNPLA3', 'FUT2', 'COL1A1', '20p11 region', '20p11 region', 'AR upstream', 'SRD5A2', 'PTGES2', 'PTGFR', 'PTGDR2', 'CRABP2', 'SLC45A2', 'ADRB2'])
+
+  // Choose data source based on reportTitle or other condition
+  // You can change this logic based on your needs
+  const getGeneData = () => {
+    if (reportTitle === 'Male Fertility') {
+      return maleFertilityGenesData;
+    } else if (reportTitle === 'Female Fertility') {
+      return femaleFertilityGenesData;
+    } else {
+      // Default: Hair Genetics
+      return hairGeneticsGenesData.filter((item) => updatedGene.includes(item.Gene));
+    }
+  };
+
+  const updatedInitialCardDate = getGeneData();
+
+  // Configurable state
+  const [genes, setGenes] = useState(updatedInitialCardDate);
+  const [itemsPerPage, setItemsPerPage] = useState(2);
 
   // Calculated values
   const totalPages = Math.ceil(genes.length / itemsPerPage);
@@ -141,54 +158,54 @@ function Report() {
     return `rgba(${R}, ${G}, ${B}, ${opacity})`;
   }
 
-    return (
-        <div className='report'>
-            {kit ? (<>
-                {/* Page 1: Cover */}
-                <ReportCover
-                    kit={kit}
-                    onDownload={async () => {
-                        setLoading(true);
-                        await downloadpdf();
-                        setLoading(false);
-                    }}
-                    loading={loading}
-                    progress={persontage}
-                    title={reportTitle}
-                />
+  return (
+    <div className='report'>
+      {kit ? (<>
+        {/* Page 1: Cover */}
+        <ReportCover
+          kit={kit}
+          onDownload={async () => {
+            setLoading(true);
+            await downloadpdf();
+            setLoading(false);
+          }}
+          loading={loading}
+          progress={persontage}
+          title={reportTitle}
+        />
 
-                {/* Page 2: Gene Summary */}
-                <GeneSummary
-                    genes={genes}
-                    kit={kit}
-                    lightenColorWithOpacity={lightenColorWithOpacity}
-                    title={reportTitle}
-                />
+        {/* Page 2: Gene Summary */}
+        <GeneSummary
+          genes={genes}
+          kit={kit}
+          lightenColorWithOpacity={lightenColorWithOpacity}
+          title={reportTitle}
+        />
 
-          {/* Remaining Pages: Gene Details */}
-          {Array.from({ length: totalPages }, (_, pageIdx) => {
-            const start = pageIdx * itemsPerPage;
-            const end = start + itemsPerPage;
-            const pageData = genes.slice(start, end);
+        {/* Remaining Pages: Gene Details */}
+        {Array.from({ length: totalPages }, (_, pageIdx) => {
+          const start = pageIdx * itemsPerPage;
+          const end = start + itemsPerPage;
+          const pageData = genes.slice(start, end);
 
-                    return (
-                        <GeneDetailsPage
-                            key={pageIdx}
-                            pageData={pageData}
-                            kit={kit}
-                            pageIndex={pageIdx + 3} // Starts from Page 3
-                            totalPages={totalPages + 2} // Total pages + Cover + Summary
-                            lightenColorWithOpacity={lightenColorWithOpacity}
-                            title={reportTitle}
-                        />
-                    );
-                })}
+          return (
+            <GeneDetailsPage
+              key={pageIdx}
+              pageData={pageData}
+              kit={kit}
+              pageIndex={pageIdx + 3} // Starts from Page 3
+              totalPages={totalPages + 2} // Total pages + Cover + Summary
+              lightenColorWithOpacity={lightenColorWithOpacity}
+              title={reportTitle}
+            />
+          );
+        })}
 
-            </>) : (
-                <img src="/empty.gif" alt="loading..." width={500} />
-            )}
-        </div>
-    );
+      </>) : (
+        <img src="/empty.gif" alt="loading..." width={500} />
+      )}
+    </div>
+  );
 }
 
 export default Report;

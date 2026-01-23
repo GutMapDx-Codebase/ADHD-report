@@ -581,7 +581,7 @@ const hairGeneticsGenes = [
     },
     {
         "Gene": "SRD5A2",
-        "Key SNPs": "rs523349", 
+        "Key SNPs": "rs523349",
         "Function": "DHT synthesis enzyme",
         "description": "Converts testosterone to DHT, a key hormone in hair follicle miniaturization. Variants can increase risk of hair thinning and scalp sensitivity.",
         "isRed": {
@@ -599,7 +599,7 @@ const hairGeneticsGenes = [
     },
     {
         "Gene": "PTGES2",
-        "Key SNPs": "rs13283456", 
+        "Key SNPs": "rs13283456",
         "Function": "Prostaglandin synthesis",
         "description": "Involved in prostaglandin production, which affects inflammation and hair growth. Variants may disrupt this balance, contributing to hair loss and skin irritation.",
         "isRed": {
@@ -617,7 +617,7 @@ const hairGeneticsGenes = [
     },
     {
         "Gene": "PTGFR",
-        "Key SNPs": "rs10782665", 
+        "Key SNPs": "rs10782665",
         "Function": "Prostaglandin receptor",
         "description": "Regulates prostaglandin F2α signaling, which affects hair growth cycles. Variants may contribute to hair loss or impaired regrowth.",
         "isRed": {
@@ -635,7 +635,7 @@ const hairGeneticsGenes = [
     },
     {
         "Gene": "PTGDR2",
-        "Key SNPs": "rs533116", 
+        "Key SNPs": "rs533116",
         "Function": "Prostaglandin receptor",
         "description": "Linked to immune response and allergic inflammation. Variants may increase skin sensitivity and inflammatory skin conditions.",
         "isGreen": {
@@ -719,17 +719,17 @@ const femaleFertilityGenes = [
         "description": "",
         "isRed": {
             "Results": "Ser/Ser",
-            "Recommendation":"Monitor ovarian reserve; discuss tailored FSH dosing with practitioner.",
+            "Recommendation": "Monitor ovarian reserve; discuss tailored FSH dosing with practitioner.",
             "Function": "Lower ovarian sensitivity to FSH, may impair follicle development.",
         },
         "isYellow": {
             "Results": "Asn/Ser",
-            "Recommendation":"Maintain hormone balance, track cycle data, support ovulation with diet and lifestyle.",
+            "Recommendation": "Maintain hormone balance, track cycle data, support ovulation with diet and lifestyle.",
             "Function": "Moderate FSH sensitivity; may affect ART success.",
         },
         "isGreen": {
             "Results": "Asn/Asn",
-            "Recommendation":"Support fertility with general endocrine and ovarian support through diet and stress reduction.",
+            "Recommendation": "Support fertility with general endocrine and ovarian support through diet and stress reduction.",
             "Function": "Typical ovarian responsiveness to FSH.",
         }
     },
@@ -740,17 +740,17 @@ const femaleFertilityGenes = [
         "description": "",
         "isRed": {
             "Results": "TT",
-            "Recommendation":"Use methylated folate, reduce alcohol and endocrine disruptors, and support detox pathways.",
+            "Recommendation": "Use methylated folate, reduce alcohol and endocrine disruptors, and support detox pathways.",
             "Function": "Reduced methylation; may affect egg quality and hormonal detoxification.",
         },
         "isYellow": {
             "Results": "CT",
-            "Recommendation":"Support with methylated B vitamins and balanced dietary intake of folate-rich foods.",
+            "Recommendation": "Support with methylated B vitamins and balanced dietary intake of folate-rich foods.",
             "Function": "Partial reduction in folate metabolism.",
         },
         "isGreen": {
             "Results": "CC",
-            "Recommendation":"Maintain adequate B-vitamin levels through a nutrient-rich diet.",
+            "Recommendation": "Maintain adequate B-vitamin levels through a nutrient-rich diet.",
             "Function": "Normal folate metabolism and methylation efficiency.",
         }
     },
@@ -761,20 +761,20 @@ const femaleFertilityGenes = [
         "description": "",
         "isRed": {
             "Results": "Met/Met",
-            "Recommendation":"Support estrogen detox with cruciferous vegetables and liver nutrients (DIM, calcium-D-glucarate)",
+            "Recommendation": "Support estrogen detox with cruciferous vegetables and liver nutrients (DIM, calcium-D-glucarate)",
             "Function": "Slower estrogen breakdown; risk of estrogen dominance.",
-            
+
         },
         "isYellow": {
             "Results": "Val/Met",
-            "Recommendation":"Maintain estrogen balance with fiber, liver support, and regular bowel movements.",
-           "Function": "Moderate estrogen metabolism.",
+            "Recommendation": "Maintain estrogen balance with fiber, liver support, and regular bowel movements.",
+            "Function": "Moderate estrogen metabolism.",
         },
         "isGreen": {
             "Results": "Val/Val",
-            "Recommendation":"Maintain liver health and ensure consistent intake of phytonutrients.",
+            "Recommendation": "Maintain liver health and ensure consistent intake of phytonutrients.",
             "Function": "Efficient estrogen metabolism.",
-         
+
         }
     },
     {
@@ -784,17 +784,17 @@ const femaleFertilityGenes = [
         "description": "",
         "isRed": {
             "Results": "TT",
-            "Recommendation":"Support estrogen clearance via liver nutrients and high-fiber diet.",
+            "Recommendation": "Support estrogen clearance via liver nutrients and high-fiber diet.",
             "Function": "Increased sensitivity to estrogen; may elevate risk of hormone-related symptoms.",
         },
         "isYellow": {
             "Results": "CT",
-            "Recommendation":"Maintain hormone balance with cruciferous vegetables and regular detox support.",
+            "Recommendation": "Maintain hormone balance with cruciferous vegetables and regular detox support.",
             "Function": "Balanced estrogen signaling and metabolism.",
         },
         "isGreen": {
             "Results": "CC",
-            "Recommendation":"Support estrogen levels with phytoestrogens and adrenal support.",
+            "Recommendation": "Support estrogen levels with phytoestrogens and adrenal support.",
             "Function": "May reduce estrogen receptor activation; possible lower fertility response.",
         }
     },
@@ -805,17 +805,17 @@ const femaleFertilityGenes = [
         "description": "",
         "isGreen": {
             "Results": "GG",
-            "Recommendation":"Balance hormone levels with exercise, liver support, and fiber.",
+            "Recommendation": "Balance hormone levels with exercise, liver support, and fiber.",
             "Function": "May lead to higher free estrogen and testosterone.",
         },
         "isYellow": {
             "Results": "GA",
-            "Recommendation":"Support with healthy fats, fiber, and blood sugar stability.",
+            "Recommendation": "Support with healthy fats, fiber, and blood sugar stability.",
             "Function": "Intermediate regulation of free sex hormones.",
         },
         "isRed": {
             "Results": "AA",
-            "Recommendation":"Ensure adequate calorie and fat intake; monitor hormone levels.",
+            "Recommendation": "Ensure adequate calorie and fat intake; monitor hormone levels.",
             "Function": "May lower bioavailable estrogen and testosterone.",
         }
     },
@@ -826,17 +826,17 @@ const femaleFertilityGenes = [
         "description": "",
         "isRed": {
             "Results": "TT",
-            "Recommendation":"Support estrogen metabolism with cruciferous vegetables and reduce xenoestrogen exposure.",
+            "Recommendation": "Support estrogen metabolism with cruciferous vegetables and reduce xenoestrogen exposure.",
             "Function": "Higher estrogen production; may contribute to estrogen dominance.",
         },
         "isYellow": {
             "Results": "TC",
-            "Recommendation":"Support hormone balance through diet, sleep, and detox pathways.",
+            "Recommendation": "Support hormone balance through diet, sleep, and detox pathways.",
             "Function": "Balanced estrogen production.",
         },
         "isGreen": {
             "Results": "CC",
-            "Recommendation":"Monitor estrogen levels and support ovulation with healthy fat and protein intake.",
+            "Recommendation": "Monitor estrogen levels and support ovulation with healthy fat and protein intake.",
             "Function": "Reduced conversion of androgens to estrogens.",
         }
     },
@@ -847,7 +847,7 @@ const femaleFertilityGenes = [
         "description": "",
         "isGreen": {
             "Results": "AA",
-            "Recommendation":"Support progesterone with vitamin B6, magnesium, and stress reduction."
+            "Recommendation": "Support progesterone with vitamin B6, magnesium, and stress reduction."
         }
     },
     {
@@ -857,12 +857,12 @@ const femaleFertilityGenes = [
         "description": "",
         "isGreen": {
             "Results": "AA",
-            "Recommendation":"Track AMH over time and consider early fertility planning if indicated."
+            "Recommendation": "Track AMH over time and consider early fertility planning if indicated."
         }
     },
 
 
-    
+
 
 ];
 
@@ -876,17 +876,17 @@ const maleFertilityGenes = [
         "description": "",
         "isRed": {
             "Results": "TT",
-            "Recommendation":"Use methylated folate and B12, eat leafy greens, avoid alcohol and processed food.",
+            "Recommendation": "Use methylated folate and B12, eat leafy greens, avoid alcohol and processed food.",
             "Function": "Reduced MTHFR activity, elevated homocysteine, impaired sperm DNA integrity.",
         },
         "isYellow": {
             "Results": "CT",
-            "Recommendation":"Support with methyl donors like folate, B12, and B6; monitor homocysteine.",
+            "Recommendation": "Support with methyl donors like folate, B12, and B6; monitor homocysteine.",
             "Function": "Moderate reduction in folate metabolism and methylation efficiency.",
         },
         "isGreen": {
             "Results": "CC",
-            "Recommendation":"Maintain balanced intake of B vitamins through diet.",
+            "Recommendation": "Maintain balanced intake of B vitamins through diet.",
             "Function": "Normal enzyme activity and folate metabolism.",
         }
     },
@@ -897,17 +897,17 @@ const maleFertilityGenes = [
         "description": "",
         "isRed": {
             "Results": "CC",
-            "Recommendation":"Support with methylated B-complex vitamins, particularly methylfolate and B12.",
+            "Recommendation": "Support with methylated B-complex vitamins, particularly methylfolate and B12.",
             "Function": "Reduced methylation and neurotransmitter synthesis.",
         },
         "isYellow": {
             "Results": "AC",
-            "Recommendation":"Mild impairment in methylation cycle.",
+            "Recommendation": "Mild impairment in methylation cycle.",
             "Function": "Ensure adequate intake of folate-rich foods and consider active B-vitamin supplements.",
         },
         "isGreen": {
             "Results": "AA",
-            "Recommendation":"Maintain general B-vitamin and folate intake through whole foods.",
+            "Recommendation": "Maintain general B-vitamin and folate intake through whole foods.",
             "Function": "Typical enzyme activity and methylation function.",
         }
     },
@@ -918,10 +918,10 @@ const maleFertilityGenes = [
         "description": "",
         "isRed": {
             "Results": "T",
-            "Recommendation":"Increase intake of natural folate-rich foods and consider folinic acid support.",
-            
+            "Recommendation": "Increase intake of natural folate-rich foods and consider folinic acid support.",
+
         },
-        
+
     },
     {
         "Gene": "GSTP1",
@@ -930,17 +930,17 @@ const maleFertilityGenes = [
         "description": "",
         "isRed": {
             "Results": "GG",
-            "Recommendation":"Maintain antioxidant intake from a varied, nutrient-dense diet.",
+            "Recommendation": "Maintain antioxidant intake from a varied, nutrient-dense diet.",
             "Function": "Normal GSTP1 activity and antioxidant function.",
         },
         "isYellow": {
             "Results": "AG",
-            "Recommendation":"Support with additional antioxidants and reduce toxin exposure.",
+            "Recommendation": "Support with additional antioxidants and reduce toxin exposure.",
             "Function": "Moderate reduction in antioxidant enzyme function.",
         },
         "isGreen": {
             "Results": "AA",
-            "Recommendation":"Use high-potency antioxidant support and evaluate toxin exposures.",
+            "Recommendation": "Use high-potency antioxidant support and evaluate toxin exposures.",
             "Function": "Lowest GSTP1 activity; increased susceptibility to oxidative damage.",
         }
     },
@@ -951,10 +951,10 @@ const maleFertilityGenes = [
         "description": "",
         "isRed": {
             "Results": "GG",
-            "Recommendation":"Consult a fertility specialist; support testicular function with zinc and CoQ10.",
-           
+            "Recommendation": "Consult a fertility specialist; support testicular function with zinc and CoQ10.",
+
         },
-       
+
     },
     {
         "Gene": "FSHR",
@@ -963,10 +963,10 @@ const maleFertilityGenes = [
         "description": "",
         "isGreen": {
             "Results": "Ser/Ser ",
-            "Recommendation":"Monitor FSH levels and consider reproductive endocrinology support.",
-            
+            "Recommendation": "Monitor FSH levels and consider reproductive endocrinology support.",
+
         },
-       
+
     },
     {
         "Gene": "FSHR",
@@ -975,7 +975,7 @@ const maleFertilityGenes = [
         "description": "",
         "isGreen": {
             "Results": "Ala/Ala",
-            "Recommendation":"Consider hormonal assessment and fertility-specific nutrient support."
+            "Recommendation": "Consider hormonal assessment and fertility-specific nutrient support."
         }
     },
     {
@@ -985,17 +985,17 @@ const maleFertilityGenes = [
         "description": "",
         "isGreen": {
             "Results": "GG",
-            "Recommendation":"Maintain overall endocrine balance with lifestyle and diet.",
+            "Recommendation": "Maintain overall endocrine balance with lifestyle and diet.",
             "Function": "Normal LH receptor function and hormone regulation.",
         },
         "isYellow": {
             "Results": "AG",
-            "Recommendation":"Support hormone production with healthy fats and micronutrients like zinc.",
+            "Recommendation": "Support hormone production with healthy fats and micronutrients like zinc.",
             "Function": "Mild reduction in LH signaling.",
         },
         "isRed": {
             "Results": "AA",
-            "Recommendation":"Monitor testosterone and support with zinc, vitamin D, and stress management.",
+            "Recommendation": "Monitor testosterone and support with zinc, vitamin D, and stress management.",
             "Function": "TReduced LH receptor sensitivity, may impact testosterone.",
         }
     },
@@ -1006,7 +1006,7 @@ const maleFertilityGenes = [
         "description": "",
         "isGreen": {
             "Results": "Variant",
-            "Recommendation":"Assess hormone levels and support testicular health with targeted nutrition."
+            "Recommendation": "Assess hormone levels and support testicular health with targeted nutrition."
         }
 
 
@@ -1018,10 +1018,10 @@ const maleFertilityGenes = [
         "description": "",
         "isRed": {
             "Results": "GG",
-            "Recommendation":"Assess hormone levels and support testicular health with targeted nutrition."
+            "Recommendation": "Assess hormone levels and support testicular health with targeted nutrition."
         }
 
-        
+
     },
 
     {
@@ -1031,43 +1031,73 @@ const maleFertilityGenes = [
         "description": "",
         "isRed": {
             "Results": "GG",
-            "Recommendation":"Check serum ferritin and iron, avoid excess iron intake or supplements."
+            "Recommendation": "Check serum ferritin and iron, avoid excess iron intake or supplements."
         }
 
-        
+
     },
     {
         "Gene": "MLH1",
-        "Key SNPs": "rs1695",
+        "Key SNPs": "rs1800734",
         "Function": "",
         "description": "",
         "isRed": {
-            "Results": "GG",
-            "Recommendation":"Maintain antioxidant intake from a varied, nutrient-dense diet.",
-            "Function": "Normal GSTP1 activity and antioxidant function.",
+            "Results": "TT",
+            "Recommendation": "aintain antioxidant intake and general DNA support.",
+            "Function": "MNormal DNA mismatch repair activity.",
         },
         "isYellow": {
-            "Results": "AG",
-            "Recommendation":"Support with additional antioxidants and reduce toxin exposure.",
-            "Function": "Moderate reduction in antioxidant enzyme function.",
+            "Results": "CT",
+            "Recommendation": "Support DNA integrity with antioxidants and reduce inflammation.",
+            "Function": "MMild reduction in DNA repair function.",
         },
         "isGreen": {
-            "Results": "AA",
-            "Recommendation":"Use high-potency antioxidant support and evaluate toxin exposures.",
-            "Function": "Lowest GSTP1 activity; increased susceptibility to oxidative damage.",
+            "Results": "CC",
+            "Recommendation": "Use antioxidant support (e.g. vitamin E, selenium, NAC); limit environmental toxins.",
+            "Function": "Impaired DNA repair; potential for increased sperm DNA fragmentation.",
         }
+    },
+    {
+        "Gene": "PRM1",
+        "Key SNPs": "rs737008",
+        "Function": "Altered sperm chromatin structure; may affect fertility.",
+        "description": "",
+        "isRed": {
+            "Results": "AA",
+            "Recommendation": "Support sperm packaging with zinc, selenium, and L-carnitine."
+        }
+
+
+    },
+    {
+        "Gene": "TNP2",
+        "Key SNPs": "rs199536093",
+        "Function": "Linked to abnormal sperm morphology due to DNA packaging defects.",
+        "description": "",
+        "isRed": {
+            "Results": "G Variant",
+            "Recommendation": "Nutritionally support DNA condensation with zinc and arginine."
+        }
+
+
     },
 
 
 
-    
-    
 
 
-    
+
+
+
+
+
 
 ];
 
 
 
-export const hairGeneticsGenesData = hairGeneticsGenes = hairGeneticsGenes = maleFertilityGenes = femaleFertilityGenes;
+// export const hairGeneticsGenesData = hairGeneticsGenes = hairGeneticsGenes = maleFertilityGenes = femaleFertilityGenes;
+
+
+export const maleFertilityGenesData = maleFertilityGenes;
+export const femaleFertilityGenesData = femaleFertilityGenes;

@@ -6,7 +6,7 @@ import SecondCard from './SecondCard';
 import Footer from './Footer';
 import './css/Card.css';
 
-const GeneDetailsPage = ({ pageData, kit, pageIndex, totalPages, lightenColorWithOpacity,title }) => {
+const GeneDetailsPage = ({ pageData, kit, pageIndex, totalPages, lightenColorWithOpacity, title }) => {
     return (
         <div className="page">
             <div>
@@ -22,6 +22,7 @@ const GeneDetailsPage = ({ pageData, kit, pageIndex, totalPages, lightenColorWit
                         let snpResult = "N/A";
                         let snpColor = "gray";
                         let resultdiscription = data.isGreen ? data.isGreen.Recommendation : "";
+                        let functionText = data["Function"] || ""; // Default to top-level Function
 
                         const snpObj = kit.result[0].genetic.find(obj => obj.snpName === findby);
 
@@ -31,12 +32,24 @@ const GeneDetailsPage = ({ pageData, kit, pageIndex, totalPages, lightenColorWit
                             if (snpResult === data?.isGreen?.Results) {
                                 snpColor = "green";
                                 resultdiscription = data?.isGreen?.Recommendation
+                                // Check if Function is inside isGreen (fertility genes)
+                                if (data?.isGreen?.Function) {
+                                    functionText = data.isGreen.Function;
+                                }
                             } else if (snpResult === data?.isYellow?.Results) {
                                 snpColor = "amber";
                                 resultdiscription = data?.isYellow.Recommendation
+                                // Check if Function is inside isYellow (fertility genes)
+                                if (data?.isYellow?.Function) {
+                                    functionText = data.isYellow.Function;
+                                }
                             } else if (snpResult === data?.isRed.Results) {
                                 resultdiscription = data?.isRed?.Recommendation
                                 snpColor = "red";
+                                // Check if Function is inside isRed (fertility genes)
+                                if (data?.isRed?.Function) {
+                                    functionText = data.isRed.Function;
+                                }
                             }
                         }
 
@@ -56,7 +69,7 @@ const GeneDetailsPage = ({ pageData, kit, pageIndex, totalPages, lightenColorWit
                                             <tr>
                                                 <td>{data.Gene}</td>
                                                 <td>{data["Key SNPs"]}</td>
-                                                <td>{data["Function"]}</td>
+                                                <td>{functionText}</td>
                                                 <td>
                                                     <Resultbar value={snpResult} color={snpColor} />
                                                 </td>
