@@ -378,3 +378,336 @@ export const initialCardData = [
         }
     }
 ];
+// here hair genetics genes data
+
+const hairGeneticsGenes = [
+    {
+        "Gene": "MTHFR",
+        "Key SNPs": "rs1801133",
+        "Function": "Folate & methylation",
+        "description": "The MTHFR gene plays a key role in methylation, a critical process for detoxification, hormone regulation, and cellular repair. Variants in MTHFR can reduce the body's ability to activate folate, potentially impacting hair growth, skin clarity, and inflammation control.",
+        "isGreen": {
+            "Results": "CC",
+            "Recommendation": "Efficient methylation. Maintain folate-rich diet: greens, legumes, and beets. Monitor homocysteine under stress."
+        },
+        "isYellow": {
+            "Results": "CT",
+            "Recommendation": "Moderate methylation efficiency. Consider methylated B vitamins, reduce inflammation, and support detox with cruciferous vegetables."
+        },
+        "isRed": {
+            "Results": "TT",
+            "Recommendation": "Impaired methylation. Use methylfolate, methylcobalamin, B2, and B6 (P5P). Emphasize leafy greens, liver, eggs. Avoid alcohol and synthetic folic acid."
+        }
+    },
+    {
+        "Gene": "SOD2",
+        "Key SNPs": "rs4880",
+        "Function": "Mitochondrial antioxidant enzyme",
+        "description": "The SOD2 gene produces an antioxidant enzyme that protects cells from oxidative stress. Variants may weaken this defense, increasing the risk of hair loss and skin inflammation or aging.",
+        "isGreen": {
+            "Results": "CC",
+            "Recommendation": "Lower enzyme activity. Support with CoQ10, NAC, and antioxidants. Include spinach, blueberries, and olive oil in diet."
+        },
+        "isYellow": {
+            "Results": "CT",
+            "Recommendation": "Moderate antioxidant protection. Include moderate antioxidant support (vitamin C, E). Reduce mitochondrial stress."
+        },
+        "isRed": {
+            "Results": "TT",
+            "Recommendation": "Optimal enzyme function. Focus on antioxidant-rich diet for maintenance."
+        }
+    },
+    {
+        "Gene": "GC",
+        "Key SNPs": "rs2282679",
+        "Function": "Vitamin D transport",
+        "description": "The GC gene controls vitamin D transport in the body. Variants may lower vitamin D availability, affecting hair and skin health.",
+        "isGreen": {
+            "Results": "AA",
+            "Recommendation": "Lower vitamin D binding protein. Supplement with D3 + K2. Monitor 25(OH)D levels regularly. Get sunlight exposure."
+        },
+        "isYellow": {
+            "Results": "AG",
+            "Recommendation": "Moderate D status. Support with regular sun exposure and seasonal supplementation."
+        },
+        "isRed": {
+            "Results": "GG",
+            "Recommendation": "Efficient D transport. Maintain adequate sun exposure and magnesium intake."
+        }
+    },
+    {
+        "Gene": "TMPRSS6",
+        "Key SNPs": "rs855791",
+        "Function": "Iron regulation",
+        "description": "The TMPRSS6 gene regulates iron levels by controlling hepcidin. Variants may disrupt iron balance, leading to hair thinning and poor skin health.",
+        "isGreen": {
+            "Results": "TT",
+            "Recommendation": "Low iron absorption. Supplement with gentle iron (bisglycinate), vitamin C, and monitor ferritin. Include red meat, lentils, and molasses."
+        },
+        "isYellow": {
+            "Results": "CT",
+            "Recommendation": "Moderate iron regulation. Ensure iron-rich diet, especially for menstruating individuals. Include spinach and pumpkin seeds."
+        },
+        "isRed": {
+            "Results": "CC",
+            "Recommendation": "Optimal iron function. Maintain balanced diet with adequate iron sources and vitamin C."
+        }
+    },
+    {
+        "Gene": "DHCR7/NADSYN1",
+        "Key SNPs": "rs12785878",
+        "Function": "Vitamin D synthesis",
+        "description": "The DHCR7/NADSYN1 genes are involved in vitamin D synthesis and metabolism, which are vital for skin health and hair follicle function. Variants may reduce vitamin D levels, potentially contributing to hair loss and inflammatory skin conditions.",
+        "isRed": {
+            "Results": "TT",
+            "Recommendation": "Impaired D synthesis. Supplement with vitamin D3 + K2. Prioritize sun exposure (10–20 min midday)."
+        },
+        "isYellow": {
+            "Results": "GT",
+            "Recommendation": "Moderate synthesis. Supplement in winter months or if deficiency symptoms present. Include mushrooms and sardines."
+        },
+        "isGreen": {
+            "Results": "GC",
+            "Recommendation": "Efficient synthesis. Maintain sun exposure and magnesium-rich foods (seeds, leafy greens)."
+        }
+    },
+    {
+        "Gene": "PNPLA3",
+        "Key SNPs": "rs738409",
+        "Function": "Vitamin A & lipid metabolism",
+        "description": "The PNPLA3 gene helps regulate fat metabolism and inflammation. Variants may impair skin barrier function, contributing to hair loss and skin issues.",
+        "isRed": {
+            "Results": "GG",
+            "Recommendation": "Poor vitamin A metabolism. Supplement retinyl palmitate cautiously. Support liver with NAC, milk thistle. Avoid alcohol."
+        },
+        // "isYellow": {
+        //     "Results": "GT",
+        //     "Recommendation": "Moderate synthesis. Supplement in winter months or if deficiency symptoms present. Include mushrooms and sardines."
+        // },
+        "isGreen": {
+            "Results": "CC",
+            "Recommendation": "Normal function. Maintain healthy fat-soluble vitamin balance."
+        }
+    },
+    {
+        "Gene": "FUT2",
+        "Key SNPs": "rs602662",
+        "Function": "Vitamin B12 absorption",
+        "description": "The FUT2 gene affects gut microbiome balance and nutrient absorption. Variants may impact skin and hair health by reducing nutrient availability and increasing inflammation.",
+        "isRed": {
+            "Results": "GG",
+            "Recommendation": "ILow B12 absorption. Supplement with methylcobalamin or adenosylcobalamin. Include shellfish, eggs, fermented foods."
+        },
+        "isYellow": {
+            "Results": "AG",
+            "Recommendation": "Moderate status. Ensure B12-rich diet. Consider regular B-complex support.."
+        },
+        "isGreen": {
+            "Results": "AA",
+            "Recommendation": "Efficient absorption. Maintain B12 intake through varied animal protein sources."
+        }
+    },
+    {
+        "Gene": "COL1A1",
+        "Key SNPs": "rs1800012",
+        "Function": "Collagen structure",
+        "description": "The COL1A1 gene produces type I collagen, a key protein for skin strength and structure. Variants may weaken collagen formation, contributing to skin aging and hair thinning.",
+        "isRed": {
+            "Results": "TT",
+            "Recommendation": "Weaker collagen structure. Supplement with type 1 & 3 collagen, vitamin C, and lysine. Eat bone broth and berries."
+        },
+        "isYellow": {
+            "Results": "GT",
+            "Recommendation": "Moderate structure. Support with silica, zinc, and antioxidant-rich diet."
+        },
+        "isGreen": {
+            "Results": "GG",
+            "Recommendation": "Normal collagen structure. Maintain diet rich in collagen-supportive nutrients."
+        }
+    },
+    {
+        "Gene": "20p11 region",
+        "Key SNPs": "rs1160312",
+        "Function": "Genetic risk locus for AGA",
+        "description": "The 20p11 region is linked to hair follicle development and growth patterns. Variants in this region are associated with increased risk of male and female pattern hair loss.",
+        "isRed": {
+            "Results": "GG",
+            "Recommendation": "Low risk. Maintain a nutrient-rich diet and reduce oxidative stress to preserve follicle health."
+        },
+        "isYellow": {
+            "Results": "AG",
+            "Recommendation": "Moderate risk. Balance hormones with zinc, DIM. Monitor stress and inflammation."
+        },
+        "isGreen": {
+            "Results": "AA",
+            "Recommendation": "High risk. Support DHT metabolism with saw palmetto, pygeum, reishi. Consider scalp massage and topical minoxidil."
+        }
+    },
+    {
+        "Gene": "20p11 region",
+        "Key SNPs": "rs6113491",
+        "Function": "AGA susceptibility",
+        "description": "The 20p11 region is linked to hair follicle development and growth patterns. Variants in this region are associated with increased risk of male and female pattern hair loss.",
+        "isRed": {
+            "Results": "GG",
+            "Recommendation": "High risk. Use natural DHT blockers, avoid processed carbs, and support hair growth with micronutrients."
+        },
+        "isYellow": {
+            "Results": "AG",
+            "Recommendation": "Intermediate risk. Emphasize anti-inflammatory diet and omega-3 supplementation."
+        },
+        "isGreen": {
+            "Results": "AA",
+            "Recommendation": "Low risk. Maintain scalp circulation and stress reduction."
+        }
+    },
+    {
+        "Gene": "AR upstream",
+        "Key SNPs": "rs1041668",
+        "Function": "Androgen receptor regulation",
+        "description": "Regulates androgen receptor activity, influencing how hair follicles respond to hormones. Variants are strongly linked to androgenic hair loss.",
+        "isRed": {
+            "Results": "TT",
+            "Recommendation": "High AR activity. Prioritize hormone-balancing foods, cruciferous vegetables, and liver detox support."
+        },
+        "isYellow": {
+            "Results": "CT",
+            "Recommendation": "Moderate expression. Support hormone detox with sulforaphane, limit alcohol and dairy."
+        },
+        "isGreen": {
+            "Results": "CC",
+            "Recommendation": "Normal AR activity. Focus on maintaining hormonal balance through lifestyle."
+        }
+    },
+    {
+        "Gene": "SRD5A2",
+        "Key SNPs": "rs523349", 
+        "Function": "DHT synthesis enzyme",
+        "description": "Converts testosterone to DHT, a key hormone in hair follicle miniaturization. Variants can increase risk of hair thinning and scalp sensitivity.",
+        "isRed": {
+            "Results": "GG",
+            "Recommendation": "Increased DHT conversion. Use finasteride (if indicated), or natural DHT blockers. Support zinc, B6, and detox."
+        },
+        // "isYellow": {
+        //     "Results": "CT",
+        //     "Recommendation": "Moderate expression. Support hormone detox with sulforaphane, limit alcohol and dairy."
+        // },
+        "isGreen": {
+            "Results": "CC",
+            "Recommendation": "Normal DHT synthesis. Emphasize hormone-friendly lifestyle."
+        }
+    },
+    {
+        "Gene": "PTGES2",
+        "Key SNPs": "rs13283456", 
+        "Function": "Prostaglandin synthesis",
+        "description": "Involved in prostaglandin production, which affects inflammation and hair growth. Variants may disrupt this balance, contributing to hair loss and skin irritation.",
+        "isRed": {
+            "Results": "TT",
+            "Recommendation": "Lower prostaglandin signaling. Supplement with omega-3s, curcumin, and magnesium. Avoid NSAIDs."
+        },
+        "isYellow": {
+            "Results": "CT",
+            "Recommendation": "Moderate PGE2 levels. Support anti-inflammatory nutrition."
+        },
+        "isGreen": {
+            "Results": "CC",
+            "Recommendation": "Normal function. Maintain healthy fats and antioxidant intake."
+        }
+    },
+    {
+        "Gene": "PTGFR",
+        "Key SNPs": "rs10782665", 
+        "Function": "Prostaglandin receptor",
+        "description": "Regulates prostaglandin F2α signaling, which affects hair growth cycles. Variants may contribute to hair loss or impaired regrowth.",
+        "isRed": {
+            "Results": "GG",
+            "Recommendation": "Weaker receptor activity. Use rosemary oil or topical Latanoprost (if appropriate). Boost omega-3s."
+        },
+        "isYellow": {
+            "Results": "AG",
+            "Recommendation": "Moderate receptor signaling. Anti-inflammatory diet beneficial."
+        },
+        "isGreen": {
+            "Results": "AA",
+            "Recommendation": "Optimal signaling. Maintain balanced prostaglandin support."
+        }
+    },
+    {
+        "Gene": "PTGDR2",
+        "Key SNPs": "rs533116", 
+        "Function": "Prostaglandin receptor",
+        "description": "Linked to immune response and allergic inflammation. Variants may increase skin sensitivity and inflammatory skin conditions.",
+        "isGreen": {
+            "Results": "CC",
+            "Recommendation": "Higher AGA risk. Reduce inflammation with turmeric, resveratrol, and omega-3s."
+        },
+        "isYellow": {
+            "Results": "CT",
+            "Recommendation": "Moderate sensitivity. Balance prostaglandins with anti-inflammatory nutrients."
+        },
+        "isRed": {
+            "Results": "TT",
+            "Recommendation": "Normal risk. Maintain dietary balance of omega-3 to 6 fats."
+        }
+    },
+    {
+        "Gene": "CRABP2",
+        "Key SNPs": "rs12724719",
+        "Function": "Retinoic acid signaling",
+        "description": "LinTransports retinoic acid (vitamin A derivative) to the nucleus, impacting skin cell growth. Variants may affect skin renewal and contribute to acne or dryness.ked to immune response and allergic inflammation. Variants may increase skin sensitivity and inflammatory skin conditions.",
+        "isRed": {
+            "Results": "TT",
+            "Recommendation": "Impaired vitamin A signaling. Use low-dose retinol under care, eat liver, sweet potatoes, and carrots."
+        },
+        "isYellow": {
+            "Results": "CT",
+            "Recommendation": "Moderate signaling. Support vitamin A and zinc intake."
+        },
+        "isGreen": {
+            "Results": "CC",
+            "Recommendation": "Efficient retinoic acid pathway. Avoid vitamin A excess.."
+        }
+    },
+    {
+        "Gene": "SLC45A2",
+        "Key SNPs": "rs16891982",
+        "Function": "Pigmentation gene",
+        "description": "Involved in melanin production and skin pigmentation. Variants may affect skin tone and sensitivity to UV damage.",
+        "isRed": {
+            "Results": "GG",
+            "Recommendation": "Very low melanin. Prioritize sun protection, antioxidants (astaxanthin, vitamin C, E). Eat colorful veggies."
+        },
+        // "isYellow": {
+        //     "Results": "CT",
+        //     "Recommendation": "Moderate signaling. Support vitamin A and zinc intake."
+        // },
+        "isGreen": {
+            "Results": "CC",
+            "Recommendation": "Darker pigmentation. Support skin health with vitamin A, zinc, and selenium."
+        }
+    },
+    {
+        "Gene": "ADRB2",
+        "Key SNPs": "rs1042713",
+        "Function": "Stress response",
+        "description": "Regulates response to stress hormones like adrenaline. Variants may influence scalp blood flow and contribute to hair loss.",
+        "isGreen": {
+            "Results": "AA",
+            "Recommendation": "High stress sensitivity. Use adaptogens (ashwagandha, rhodiola), prioritize sleep, and supplement zinc."
+        },
+        "isYellow": {
+            "Results": "AG",
+            "Recommendation": "Moderate stress regulation. Balance nervous system with magnesium and deep breathing practices."
+        },
+        "isRed": {
+            "Results": "GG",
+            "Recommendation": "Low stress reactivity. Maintain stress resilience with lifestyle strategies."
+        }
+    },
+
+
+];
+
+
+export const hairGeneticsGenesData = hairGeneticsGenes;

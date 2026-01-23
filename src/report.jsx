@@ -13,15 +13,15 @@ import GeneSummary from './components/GeneSummary';
 import GeneDetailsPage from './components/GeneDetailsPage';
 
 // Data
-import { initialCardData } from './data';
+import { initialCardData, hairGeneticsGenesData } from './data';
 
 function Report() {
     const { id } = useParams();
     const [kit, setkit] = useState(null);
     const [reportTitle, setReportTitle] = useState('Male');
     const [loading, setLoading] = useState(false);
-    const [updatedGene, setUpdatedGene] = useState(['MTHFR', 'VDR'])
-    const updatedInitialCardDate = initialCardData.filter((item) => updatedGene.includes(item.Gene))
+    const [updatedGene, setUpdatedGene] = useState(['MTHFR', 'VDR' , 'SOD2' , 'GC' , 'TMPRSS6' , 'DHCR7/NADSYN1' , 'PNPLA3' , 'FUT2' , 'COL1A1' , '20p11 region' , '20p11 region' , 'AR upstream' , 'SRD5A2' , 'PTGES2' , 'PTGFR' , 'PTGDR2' , 'CRABP2' , 'SLC45A2' , 'ADRB2'])
+    const updatedInitialCardDate = hairGeneticsGenesData.filter((item) => updatedGene.includes(item.Gene))
     // Configurable state
     const [genes, setGenes] = useState(updatedInitialCardDate);
     const [itemsPerPage, setItemsPerPage] = useState(2);
