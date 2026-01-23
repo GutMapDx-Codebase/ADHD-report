@@ -21,20 +21,21 @@ const GeneSummary = ({ genes, kit, lightenColorWithOpacity,title }) => {
                     let snpColor = "gray";
 
                     const snpObj = kit.result[0].genetic.find(obj => obj.snpName === findby);
+                    console.log()
 
                     if (snpObj) {
                         snpResult = snpObj.allele1 + snpObj.allele2
-                        if (snpResult === data.isGreen.Results) {
+                        if (snpResult === data?.isGreen?.Results) {
                             snpColor = "green";
-                        } else if (snpResult === data.isYellow.Results) {
+                        } else if (snpResult === data?.isYellow?.Results) {
                             snpColor = "amber";
-                        } else if (snpResult === data.isRed.Results) {
+                        } else if (snpResult === data?.isRed?.Results) {
                             snpColor = "red";
                         }
                     }
 
                     return (
-                        <Box key={index} title={data.Gene} value={snpResult} boxColor={snpColor} />
+                        <Box key={index} title={data?.Gene} value={snpResult} boxColor={snpColor} />
                     )
                 })}
             </div>

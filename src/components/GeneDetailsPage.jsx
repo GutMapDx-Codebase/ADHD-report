@@ -26,16 +26,16 @@ const GeneDetailsPage = ({ pageData, kit, pageIndex, totalPages, lightenColorWit
                         const snpObj = kit.result[0].genetic.find(obj => obj.snpName === findby);
 
                         if (snpObj) {
-                            snpResult = snpObj.allele1 + snpObj.allele2;
+                            snpResult = snpObj?.allele1 + snpObj?.allele2;
 
-                            if (snpResult === data.isGreen.Results) {
+                            if (snpResult === data?.isGreen?.Results) {
                                 snpColor = "green";
-                                resultdiscription = data.isGreen.Recommendation
-                            } else if (snpResult === data.isYellow.Results) {
+                                resultdiscription = data?.isGreen?.Recommendation
+                            } else if (snpResult === data?.isYellow?.Results) {
                                 snpColor = "amber";
-                                resultdiscription = data.isYellow.Recommendation
-                            } else if (snpResult === data.isRed.Results) {
-                                resultdiscription = data.isRed.Recommendation
+                                resultdiscription = data?.isYellow.Recommendation
+                            } else if (snpResult === data?.isRed.Results) {
+                                resultdiscription = data?.isRed?.Recommendation
                                 snpColor = "red";
                             }
                         }
