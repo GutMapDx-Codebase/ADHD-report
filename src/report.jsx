@@ -23,13 +23,17 @@ function Report() {
   const [reportTitle, setReportTitle] = useState('Male');
   const [loading, setLoading] = useState(false);
   const [updatedGene, setUpdatedGene] = useState(['MTHFR', 'VDR', 'SOD2', 'GC', 'TMPRSS6', 'DHCR7/NADSYN1', 'PNPLA3', 'FUT2', 'COL1A1', '20p11 region', '20p11 region', 'AR upstream', 'SRD5A2', 'PTGES2', 'PTGFR', 'PTGDR2', 'CRABP2', 'SLC45A2', 'ADRB2'])
+  const [genes, setGenes] = useState([]);
+  const [itemsPerPage, setItemsPerPage] = useState(2);
 
-  // Choose data source based on reportTitle or other condition
-  // You can change this logic based on your needs
-  const getGeneData = () => {
-    if (reportTitle === 'Male Fertility') {
+  // Calculated values
+  const totalPages = Math.ceil(genes.length / itemsPerPage);
+
+  // Function to get gene data based on report title
+  const getGeneData = (reportType) => {
+    if (reportType === 'Male Fertility') {
       return maleFertilityGenesData;
-    } else if (reportTitle === 'Female Fertility') {
+    } else if (reportType === 'Female Fertility') {
       return femaleFertilityGenesData;
     } else {
       // Default: Hair Genetics
@@ -37,14 +41,29 @@ function Report() {
     }
   };
 
-  const updatedInitialCardDate = getGeneData();
+  // Fetch DNA Category from backend
+  const fetchDnaCategory = async (reportName) => {
+    try {
+      const response = await axios.post(
+        'https://yourgutmap-food-sensitivity-423a2af84621.herokuapp.com/getDnaCategory',
+        { reportName },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
 
-  // Configurable state
-  const [genes, setGenes] = useState(updatedInitialCardDate);
-  const [itemsPerPage, setItemsPerPage] = useState(2);
-
-  // Calculated values
-  const totalPages = Math.ceil(genes.length / itemsPerPage);
+      if (response.data.success && response.data.data) {
+        const categoryData = response.data.data;
+        // Update report title based on API response
+        setReportTitle(categoryData.reportName || 'Male');
+        return categoryData;
+      }
+    } catch (error) {
+      console.error('Error fetching DNA category:', error);
+    }
+  };
 
   const getdata = async () => {
     try {
@@ -86,6 +105,11 @@ function Report() {
 
       const styleResponse = await axios.request(styleConfig);
 
+      // Third API call: Fetch DNA Category
+      // You can pass the report name from your data or use a default value
+      const reportName = data?.reportName || 'Hair Genetics'; // Adjust based on your data structure
+      await fetchDnaCategory(reportName);
+
       // Combine both responses into globalData
       setkit({
         ...data,
@@ -106,6 +130,12 @@ function Report() {
   useEffect(() => {
     getdata();
   }, []);
+
+  // Update genes when reportTitle changes
+  useEffect(() => {
+    const newGeneData = getGeneData(reportTitle);
+    setGenes(newGeneData);
+  }, [reportTitle]);
 
   const [persontage, setpersontage] = useState(0);
   const persontageRef = useRef(0);

@@ -1096,8 +1096,7 @@ const maleFertilityGenes = [
 
 
 
-// export const hairGeneticsGenesData = hairGeneticsGenes = hairGeneticsGenes = maleFertilityGenes = femaleFertilityGenes;
-
-
+// Exports
+export const hairGeneticsGenesData = hairGeneticsGenes;
 export const maleFertilityGenesData = maleFertilityGenes;
 export const femaleFertilityGenesData = femaleFertilityGenes;
