@@ -26,6 +26,9 @@ function Report() {
   const [genes, setGenes] = useState([]);
   const [itemsPerPage, setItemsPerPage] = useState(2);
 
+  // Get API URL from environment variables
+  const API_BASE_URL = import.meta.env.VITE_HEROKU_API_URL
+
   // Calculated values
   const totalPages = Math.ceil(genes.length / itemsPerPage);
 
@@ -45,7 +48,7 @@ function Report() {
   const fetchDnaCategory = async (reportName) => {
     try {
       const response = await axios.post(
-        'https://yourgutmap-food-sensitivity-423a2af84621.herokuapp.com/getDnaCategory',
+        `${API_BASE_URL}/getDnaCategory`,
         { reportName },
         {
           headers: {
@@ -76,7 +79,7 @@ function Report() {
       let reportConfig = {
         method: "post",
         maxBodyLength: Infinity,
-        url: "https://yourgutmap-food-sensitivity-423a2af84621.herokuapp.com/viewreportdata",
+        url: `${API_BASE_URL}/viewreportdata`,
         headers: {
           "Content-Type": "application/json",
         },
@@ -96,7 +99,7 @@ function Report() {
       let styleConfig = {
         method: "post",
         maxBodyLength: Infinity,
-        url: "https://yourgutmap-food-sensitivity-423a2af84621.herokuapp.com/getReportStyleByKit",
+        url: `${API_BASE_URL}/getReportStyleByKit`,
         headers: {
           "Content-Type": "application/json",
         },
