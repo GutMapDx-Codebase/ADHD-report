@@ -480,10 +480,6 @@ const hairGeneticsGenes = [
             "Results": "GG",
             "Recommendation": "Poor vitamin A metabolism. Supplement retinyl palmitate cautiously. Support liver with NAC, milk thistle. Avoid alcohol."
         },
-        // "isYellow": {
-        //     "Results": "GT",
-        //     "Recommendation": "Moderate synthesis. Supplement in winter months or if deficiency symptoms present. Include mushrooms and sardines."
-        // },
         "isGreen": {
             "Results": "CC",
             "Recommendation": "Normal function. Maintain healthy fat-soluble vitamin balance."
@@ -588,10 +584,6 @@ const hairGeneticsGenes = [
             "Results": "GG",
             "Recommendation": "Increased DHT conversion. Use finasteride (if indicated), or natural DHT blockers. Support zinc, B6, and detox."
         },
-        // "isYellow": {
-        //     "Results": "CT",
-        //     "Recommendation": "Moderate expression. Support hormone detox with sulforaphane, limit alcohol and dairy."
-        // },
         "isGreen": {
             "Results": "CC",
             "Recommendation": "Normal DHT synthesis. Emphasize hormone-friendly lifestyle."
@@ -678,10 +670,6 @@ const hairGeneticsGenes = [
             "Results": "GG",
             "Recommendation": "Very low melanin. Prioritize sun protection, antioxidants (astaxanthin, vitamin C, E). Eat colorful veggies."
         },
-        // "isYellow": {
-        //     "Results": "CT",
-        //     "Recommendation": "Moderate signaling. Support vitamin A and zinc intake."
-        // },
         "isGreen": {
             "Results": "CC",
             "Recommendation": "Darker pigmentation. Support skin health with vitamin A, zinc, and selenium."

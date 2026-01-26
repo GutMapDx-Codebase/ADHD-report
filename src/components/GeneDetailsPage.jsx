@@ -15,7 +15,7 @@ const GeneDetailsPage = ({ pageData, kit, pageIndex, totalPages, lightenColorWit
             </div>
             <div className='secondpage' >
                 <div className="card-container">
-                    {pageData.map((data, idx) => {
+                    {pageData?.map((data, idx) => {
                         const findby = data["Key SNPs"].match(/rs\d+/)[0]
 
                         // Find the result for this SNP in kit.result
@@ -24,7 +24,7 @@ const GeneDetailsPage = ({ pageData, kit, pageIndex, totalPages, lightenColorWit
                         let resultdiscription = data.isGreen ? data.isGreen.Recommendation : "";
                         let functionText = data["Function"] || ""; // Default to top-level Function
 
-                        const snpObj = kit.result[0].genetic.find(obj => obj.snpName === findby);
+                        const snpObj = kit?.result[0]?.genetic?.find(obj => obj?.snpName === findby);
 
                         if (snpObj) {
                             snpResult = snpObj?.allele1 + snpObj?.allele2;
@@ -38,17 +38,17 @@ const GeneDetailsPage = ({ pageData, kit, pageIndex, totalPages, lightenColorWit
                                 }
                             } else if (snpResult === data?.isYellow?.Results) {
                                 snpColor = "amber";
-                                resultdiscription = data?.isYellow.Recommendation
+                                resultdiscription = data?.isYellow?.Recommendation
                                 // Check if Function is inside isYellow (fertility genes)
                                 if (data?.isYellow?.Function) {
                                     functionText = data.isYellow.Function;
                                 }
-                            } else if (snpResult === data?.isRed.Results) {
+                            } else if (snpResult === data?.isRed?.Results) {
                                 resultdiscription = data?.isRed?.Recommendation
                                 snpColor = "red";
                                 // Check if Function is inside isRed (fertility genes)
                                 if (data?.isRed?.Function) {
-                                    functionText = data.isRed.Function;
+                                    functionText = data?.isRed?.Function;
                                 }
                             }
                         }

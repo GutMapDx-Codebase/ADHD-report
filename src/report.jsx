@@ -34,16 +34,16 @@ function Report() {
   const totalPages = Math.ceil(genes.length / itemsPerPage);
 
   // Function to get gene data based on report title
-  const getGeneData = (reportType) => {
-    if (reportType === 'Male Fertility') {
-      return maleFertilityGenesData;
-    } else if (reportType === 'Female Fertility') {
-      return femaleFertilityGenesData;
-    } else {
-      // Default: Hair Genetics
-      return hairGeneticsGenesData.filter((item) => updatedGene.includes(item.Gene));
-    }
-  };
+  // const getGeneData = (reportType) => {
+  //   if (reportType === 'Male Fertility') {
+  //     return maleFertilityGenesData;
+  //   } else if (reportType === 'Female Fertility') {
+  //     return femaleFertilityGenesData;
+  //   } else {
+  //     // Default: Hair Genetics
+  //     return hairGeneticsGenesData.filter((item) => updatedGene.includes(item.Gene));
+  //   }
+  // };
 
   // Fetch DNA Category from backend
   const fetchDnaCategory = async (reportName) => {
@@ -62,7 +62,7 @@ function Report() {
         const categoryData = response.data.data;
         // Update report title based on API response
         setReportTitle(categoryData.reportName);
-        // setGenes(categoryData.category)
+        setGenes(categoryData.category)
         return categoryData;
       }
     } catch (error) {
@@ -138,10 +138,10 @@ function Report() {
   }, []);
 
   // Update genes when reportTitle changes
-  useEffect(() => {
-    const newGeneData = getGeneData(reportTitle);
-    setGenes(newGeneData);
-  }, [reportTitle]);
+  // useEffect(() => {
+  //   const newGeneData = getGeneData(reportTitle);
+  //   setGenes(newGeneData);
+  // }, [reportTitle]);
 
   const [persontage, setpersontage] = useState(0);
   const persontageRef = useRef(0);
@@ -180,7 +180,7 @@ function Report() {
     }
 
     // Save the PDF
-    pdf.save(`DNAMap ADHD-report-${kit?.kitid || "report"}.pdf`);
+    pdf.save(`DNAMap ${reportTitle}-report-${kit?.kitid || "report"}.pdf`);
   };
 
   function lightenColorWithOpacity(color, percent, opacity) {
