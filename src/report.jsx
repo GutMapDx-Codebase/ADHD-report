@@ -20,6 +20,7 @@ import { initialCardData, hairGeneticsGenesData } from './data';
 function Report() {
   const { id } = useParams();
   const [kit, setkit] = useState(null);
+  const [Kittype, setKittype] = useState(null);
   const [reportTitle, setReportTitle] = useState('Male');
   const [loading, setLoading] = useState(false);
   const [updatedGene, setUpdatedGene] = useState(['MTHFR', 'VDR', 'SOD2', 'GC', 'TMPRSS6', 'DHCR7/NADSYN1', 'PNPLA3', 'FUT2', 'COL1A1', '20p11 region', '20p11 region', 'AR upstream', 'SRD5A2', 'PTGES2', 'PTGFR', 'PTGDR2', 'CRABP2', 'SLC45A2', 'ADRB2'])
@@ -27,7 +28,7 @@ function Report() {
   const [itemsPerPage, setItemsPerPage] = useState(2);
 
   // Get API URL from environment variables
-  const API_BASE_URL = import.meta.env.VITE_HEROKU_API_URL
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL
 
   // Calculated values
   const totalPages = Math.ceil(genes.length / itemsPerPage);
@@ -48,7 +49,7 @@ function Report() {
   const fetchDnaCategory = async (reportName) => {
     try {
       const response = await axios.post(
-        `${API_BASE_URL}/getDnaCategory`,
+        `${API_BASE_URL}/getcategory`,
         { reportName },
         {
           headers: {
@@ -60,7 +61,8 @@ function Report() {
       if (response.data.success && response.data.data) {
         const categoryData = response.data.data;
         // Update report title based on API response
-        setReportTitle(categoryData.reportName || 'Male');
+        setReportTitle(categoryData.reportName);
+        // setGenes(categoryData.category)
         return categoryData;
       }
     } catch (error) {
@@ -111,7 +113,8 @@ function Report() {
       // Third API call: Fetch DNA Category
       // You can pass the report name from your data or use a default value
       const reportName = data?.reportName || 'Hair Genetics'; // Adjust based on your data structure
-      await fetchDnaCategory(reportName);
+      setKittype(data.Kittype)
+      await fetchDnaCategory(data.Kittype);
 
       // Combine both responses into globalData
       setkit({

@@ -16,7 +16,7 @@ const Header = (params) => {
         style={{ color: params.color }}
       >
        
-        DNAMap - {params.title}
+         {params.title}
       </div>
     </div>
   );
