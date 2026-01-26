@@ -16,20 +16,35 @@ const GeneSummary = ({ genes, kit, lightenColorWithOpacity,title }) => {
 
                     const findby = data["Key SNPs"].match(/rs\d+/)[0]
 
+                    // Helper function to normalize result strings for comparison
+                    const normalizeResult = (result) => {
+                        if (!result) return "";
+                        // Remove spaces, slashes, convert to uppercase, and sort characters for order-independent comparison
+                        const cleaned = result.toString().trim().replace(/[\/\s]/g, "").toUpperCase();
+                        // Sort characters for order-independent comparison (AC = CA)
+                        return cleaned.split("").sort().join("");
+                    };
+
                     // Find the result for this SNP in kit.result
                     let snpResult = "N/A";
                     let snpColor = "gray";
 
                     const snpObj = kit.result[0].genetic.find(obj => obj.snpName === findby);
-                    console.log()
 
                     if (snpObj) {
-                        snpResult = snpObj.allele1 + snpObj.allele2
-                        if (snpResult === data?.isGreen?.Results) {
+                        snpResult = (snpObj.allele1 + snpObj.allele2).trim();
+                        const normalizedSnpResult = normalizeResult(snpResult);
+
+                        // Normalize all result values for comparison
+                        const greenResult = normalizeResult(data?.isGreen?.Results);
+                        const yellowResult = normalizeResult(data?.isYellow?.Results);
+                        const redResult = normalizeResult(data?.isRed?.Results);
+
+                        if (normalizedSnpResult === greenResult || snpResult === data?.isGreen?.Results || snpResult === data?.isGreen?.Results?.replace('/', '')) {
                             snpColor = "green";
-                        } else if (snpResult === data?.isYellow?.Results) {
+                        } else if (normalizedSnpResult === yellowResult || snpResult === data?.isYellow?.Results || snpResult === data?.isYellow?.Results?.replace('/', '')) {
                             snpColor = "amber";
-                        } else if (snpResult === data?.isRed?.Results) {
+                        } else if (normalizedSnpResult === redResult || snpResult === data?.isRed?.Results || snpResult === data?.isRed?.Results?.replace('/', '')) {
                             snpColor = "red";
                         }
                     }

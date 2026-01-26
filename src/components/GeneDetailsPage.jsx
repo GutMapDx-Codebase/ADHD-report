@@ -18,38 +18,58 @@ const GeneDetailsPage = ({ pageData, kit, pageIndex, totalPages, lightenColorWit
                     {pageData?.map((data, idx) => {
                         const findby = data["Key SNPs"].match(/rs\d+/)[0]
 
+                        // Helper function to normalize result strings for comparison
+                        const normalizeResult = (result) => {
+                            if (!result) return "";
+                            // Remove spaces, slashes, convert to uppercase, and sort characters for order-independent comparison
+                            const cleaned = result.toString().trim().replace(/[\/\s]/g, "").toUpperCase();
+                            // Sort characters for order-independent comparison (AC = CA)
+                            return cleaned.split("").sort().join("");
+                        };
+
                         // Find the result for this SNP in kit.result
                         let snpResult = "N/A";
                         let snpColor = "gray";
-                        let resultdiscription = data.isGreen ? data.isGreen.Recommendation : "";
-                        let functionText = data["Function"] || ""; // Default to top-level Function
+                        // Default recommendation: Check all available colors in priority order (isGreen > isYellow > isRed)
+                        let resultdiscription = 
+                            data?.isGreen?.Recommendation || 
+                            data?.isYellow?.Recommendation || 
+                            data?.isRed?.Recommendation || 
+                            "";
+                        // Function priority (default): top-level Function, then any available from isGreen/isYellow/isRed
+                        let functionText =
+                            data["Function"] ||
+                            data?.isGreen?.Function ||
+                            data?.isYellow?.Function ||
+                            data?.isRed?.Function ||
+                            "";
 
                         const snpObj = kit?.result[0]?.genetic?.find(obj => obj?.snpName === findby);
 
                         if (snpObj) {
-                            snpResult = snpObj?.allele1 + snpObj?.allele2;
+                            snpResult = (snpObj?.allele1 + snpObj?.allele2).trim();
+                            const normalizedSnpResult = normalizeResult(snpResult);
 
-                            if (snpResult === data?.isGreen?.Results) {
+                            // Improved matching: normalize both sides for comparison
+                            const greenResult = normalizeResult(data?.isGreen?.Results);
+                            const yellowResult = normalizeResult(data?.isYellow?.Results);
+                            const redResult = normalizeResult(data?.isRed?.Results);
+
+                            if (normalizedSnpResult === greenResult || snpResult === data?.isGreen?.Results || snpResult === data?.isGreen?.Results?.replace('/', '')) {
                                 snpColor = "green";
-                                resultdiscription = data?.isGreen?.Recommendation
-                                // Check if Function is inside isGreen (fertility genes)
-                                if (data?.isGreen?.Function) {
-                                    functionText = data.isGreen.Function;
-                                }
-                            } else if (snpResult === data?.isYellow?.Results) {
+                                resultdiscription = data?.isGreen?.Recommendation || resultdiscription;
+                                // Priority: Use Function from color object if available, otherwise use top-level Function
+                                functionText = data?.isGreen?.Function || data["Function"] || "";
+                            } else if (normalizedSnpResult === yellowResult || snpResult === data?.isYellow?.Results || snpResult === data?.isYellow?.Results?.replace('/', '')) {
                                 snpColor = "amber";
-                                resultdiscription = data?.isYellow?.Recommendation
-                                // Check if Function is inside isYellow (fertility genes)
-                                if (data?.isYellow?.Function) {
-                                    functionText = data.isYellow.Function;
-                                }
-                            } else if (snpResult === data?.isRed?.Results) {
-                                resultdiscription = data?.isRed?.Recommendation
+                                resultdiscription = data?.isYellow?.Recommendation || resultdiscription;
+                                // Priority: Use Function from color object if available, otherwise use top-level Function
+                                functionText = data?.isYellow?.Function || data["Function"] || "";
+                            } else if (normalizedSnpResult === redResult || snpResult === data?.isRed?.Results || snpResult === data?.isRed?.Results?.replace('/', '')) {
+                                resultdiscription = data?.isRed?.Recommendation || resultdiscription;
                                 snpColor = "red";
-                                // Check if Function is inside isRed (fertility genes)
-                                if (data?.isRed?.Function) {
-                                    functionText = data?.isRed?.Function;
-                                }
+                                // Priority: Use Function from color object if available, otherwise use top-level Function
+                                functionText = data?.isRed?.Function || data["Function"] || "";
                             }
                         }
 
