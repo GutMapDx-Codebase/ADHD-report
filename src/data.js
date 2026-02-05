@@ -901,7 +901,7 @@ const maleFertilityGenes = [
     },
     {
         "Gene": "FOLH1",
-        "Key SNPs": "rs61886492)",
+        "Key SNPs": "rs61886492",
         "Function": "Reduced folate absorption, may impair DNA synthesis in sperm.",
         "description": "",
         "isRed": {
@@ -1014,7 +1014,7 @@ const maleFertilityGenes = [
 
     {
         "Gene": "HFE",
-        "Key SNPs": "rs1800562 (C282Y)",
+        "Key SNPs": "rs1800562",
         "Function": "Risk of iron overload; can impair sperm via oxidative stress.",
         "description": "",
         "isRed": {

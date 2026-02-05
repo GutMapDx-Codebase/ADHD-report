@@ -2,6 +2,15 @@ import React from 'react';
 import './css/page1.css'; // Assuming styles are here or inherited
 
 const ReportCover = ({ kit, onDownload, loading, progress,title }) => {
+    if(title.includes('DNA')){
+    title = title.replace(/DNA/g, '');
+}
+    if(title.includes('Map')){
+    title = title.replace(/Map/g, '');
+}
+    if(title.includes('Hair and Skin')){
+    title = 'Hair, Skin & Nails'
+    }
     return (
         <div className="page">
             <div className='firstpage'>

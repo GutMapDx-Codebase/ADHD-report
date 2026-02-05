@@ -113,13 +113,13 @@ function Report() {
       // Third API call: Fetch DNA Category
       // You can pass the report name from your data or use a default value
       const reportName = data?.reportName || 'Hair Genetics'; // Adjust based on your data structure
-      setKittype(data.Kittype)
-      await fetchDnaCategory(data.Kittype);
+      setKittype(data?.Kittype)
+      await fetchDnaCategory(data?.Kittype);
 
       // Combine both responses into globalData
       setkit({
         ...data,
-        style: styleResponse.data?.style || {
+        style: styleResponse?.data?.style || {
           primaryColor: "",
           secondaryColor: "",
           header: "",
